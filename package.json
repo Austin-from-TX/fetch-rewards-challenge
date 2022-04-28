@@ -1,0 +1,14 @@
+{
+  "name": "fetch_rewards_challenge",
+  "version": "1.0.0",
+  "description": "my solution to the Fetch Rewards hiring challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Austin Howard",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
