@@ -1,10 +1,16 @@
 const express = require('express')
 const app = express()
 
-const pointsData = {}
+const pointsData = [
+  {
+    payer: 'DANONE',
+    points: 1000, 
+    timestamp: 'Today'
+  }
+]
 
 app.get('/balances', (req, res, next) => {
-  res.json(poinstData)
+  res.json(pointsData)
 })
 
 app.post('/')
