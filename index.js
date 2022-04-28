@@ -13,7 +13,12 @@ app.get('/balances', (req, res, next) => {
   res.json(pointsData)
 })
 
-app.post('/')
+app.post('/balances', (req, res, next) => {
+  pointsData = req.body
+  res.json(pointsData)
+})
+
+
 
 const PORT = 3000
 
