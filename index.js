@@ -18,6 +18,10 @@ app.post('/balances', (req, res, next) => {
   res.json(pointsData)
 })
 
+app.post('/spend', (req, res, next) => {
+  res.json(pointsData)
+})
+
 
 
 const PORT = 3000
