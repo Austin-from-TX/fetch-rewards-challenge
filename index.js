@@ -14,7 +14,6 @@ app.get('/balances', (req, res) => {
 app.post('/balances', (req, res) => {
   pointsData.push(req.body)
   sortByTimestamp(pointsData, "timestamp")
-  console.log('pointsData', pointsData)
   res.json(pointsData)
 })
 
@@ -39,14 +38,20 @@ function deductPoints(array, amount) {
 
   for (let i = 0; i < array.length; i++){
     let current = array[i]
-    if (amount > current.points) {
+    if (amount > current.points && current.points > 0) {
       amount -= current.points 
       result.push({payer: current.payer, points: `-${current.points}`})
-      console.log('result', result)
     }
-    if (amount < current.points) {
-      let difference = current.points -= amount
-      result.push({payer: current.payer, points: `-${difference}`})
+    if (amount > current.points && current.points < 0) {
+      amount -= current.points
+      if (current.payer in result.player) console.log('YAS')
+      // if(result.payer[current.payer]) {
+      //   result.current.payer[points] += current.points
+      // }
+    }
+
+    if (amount < current.points && current.points > 0) {
+      result.push({payer: current.payer, points: `-${amount}`})
       console.log('result', result)
       return result
     }
